@@ -1,0 +1,17 @@
+{
+    "short_name": "Escape game",
+    "name": "Escape game",
+    "icons": [
+      {
+        "src": "/icons/rooms.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+    ],
+    "start_url": "/?source=pwa",
+    "background_color": "#FFFFFF",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#232526",
+    "description": "An escape mini-game based on combining objects"
+}
