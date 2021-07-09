@@ -3,7 +3,7 @@
     "name": "Escape game",
     "icons": [
       {
-        "src": "/icons/rooms.png",
+        "src": "/icons/room.png",
         "type": "image/png",
         "sizes": "192x192"
       }
