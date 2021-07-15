@@ -6,6 +6,7 @@
     </header>
     <Room :items="gameController.world" @use="useItem" @take="takeItem" />
     <Button :disabled="!gameController.finished" @click="gameController.finish()" icon='https://image.flaticon.com/icons/png/512/4634/4634114.png' type="danger">Sortir</Button>
+    <modal name="text-modal">fgdfgdfgdf</modal>
   </div>
 </template>
 
@@ -14,7 +15,7 @@ import { GameController } from './models/GameController';
 import Timer from './components/Timer';
 import Craft from './components/Craft.vue';
 import Room from './components/Room.vue';
-import Button from './components/Button.vue'
+import Button from './components/Button.vue';
 
 export default {
   name: 'App',
@@ -22,6 +23,9 @@ export default {
     return {
       gameController: new GameController(this)
     };
+  },
+  mounted: function(){
+    this.$modal.show('text-modal');
   },
   methods :{
     removeItemFromInventory: function (item){
@@ -51,6 +55,7 @@ html{
 
 body{
   @apply 
+    overflow-hidden
     flex 
     flex-col 
     justify-center 
@@ -65,14 +70,19 @@ body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-  @apply w-full max-w-xl bg-blue-300;
+  @apply
+    flex
+    flex-col
+    justify-center 
+    w-full max-w-xl 
+    bg-blue-300;
 
 }
 
 header{
   @apply
     flex
-    justify-between;
+    justify-between
+    items-end;
 }
 </style>

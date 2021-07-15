@@ -4,8 +4,8 @@ export class Lighter extends GameObject {
     constructor(game, name, status){
         const type = "Lighter";
         const icons = {
-           idle: "https://image.flaticon.com/icons/png/512/4986/4986714.png",
-           on: "https://image.flaticon.com/icons/png/512/2385/2385911.png" 
+           idle: require('../assets/lighter-off.png'),
+           on: require('../assets/lighter-on.png') 
         };
         super(game, name, icons, type, status);
     }

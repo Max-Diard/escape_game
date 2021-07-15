@@ -1,12 +1,8 @@
 import { GameObject } from "./GameObject";
 
 export class Container extends GameObject{
-    constructor(game, name, status, items){
-        const type = "Container";
-        const icons = {
-            idle: 'https://image.flaticon.com/icons/png/512/2219/2219544.png'
-        }
-        super(game, name, icons, type, status);
+    constructor(game, name, icons, type,  status, items){
+        super(game, name, icons, type || 'Container', status);
         this.items = items;
     }
 
@@ -14,6 +10,9 @@ export class Container extends GameObject{
         if(this.status === "idle"){
             this.game.addItemsToWorld(this.items);
             this.setStatus("opened");
+            return true;
+        }else{
+            alert('Ce container a déjà été vidé!')
         }
     }
 }

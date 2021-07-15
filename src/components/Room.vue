@@ -32,11 +32,13 @@ export default{
 
 .room{
     @apply 
+        overflow-scroll
         bg-white
         rounded-xl
         shadow-xl
         my-5
-        overflow-hidden;;
+        overflow-hidden
+        h-1/2;
 }
 
 .room-title{
@@ -45,7 +47,7 @@ export default{
         text-white
         text-center
         text-lg
-        p-3
+        p-3;
 }
 
 .item-icon{

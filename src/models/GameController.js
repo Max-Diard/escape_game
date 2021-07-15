@@ -1,16 +1,21 @@
 import { Readable } from './Readable';
 import { Lighter } from './Lighter';
 import { Container } from './Container';
+import { LockedContainer } from './LockedContainer';
 import { GameObject } from './GameObject';
+import { Table } from './Table';
 
 export class GameController {
     constructor(ui){
         this.ui = ui;
         this.world = [
+            new Table (this, "Table1", 'idle', false),
+            new Table (this, "Table2", 'idle', true),
             new Readable(this, "Lettre", "idle", "Coucou je suis une lettre"),
             new Lighter(this, "Briquet", "idle"),
-            new Container(this, "Armoire", "idle", [
-                new GameObject(this.game, "Cendres", {idle: "https://image.flaticon.com/icons/png/512/1657/1657184.png"}, "Ashes", "idle")
+            new Container(this, "Armoire", {idle: ''}, null, "idle", []),
+            new LockedContainer(this, "Casier à code", {idle: ''}, "idle", [
+                new GameObject(this.game, "s", {idle: ''}, "Ashes", "idle")
             ])
             
         ];
